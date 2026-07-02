@@ -22,3 +22,5 @@ Cross-chain functionality with the Bitcoin Lightning Network has been verified â
 
 5. Watchtowers: same job, same problem shape:
 Exactly like Lightning: since a counterparty could try to broadcast an old, more-favorable channel state after you go offline, Fiber has watchtower support so node operators don't have to stay online 24/7 to police their channels. If you understand Lightning's justice-transaction / penalty model, you already understand this piece â€” the underlying commitment-transaction-revocation logic transfers directly.
+
+In the coming days, I look forward to properly understanding fiber, looking at and understanding what is already being built on it, and seeing what I could build for the Hackathon, which could scale and turn into a full-on product idea.
