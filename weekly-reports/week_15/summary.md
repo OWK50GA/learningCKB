@@ -54,7 +54,11 @@ This is correct behaviour. The IDL client checks structure. The VM checks semant
 
 ### Focus Shift
 
-The `ckb_lock_script` repository is now in a maintenance state. The active development focus shifts to `ckb-idl-client` — the wire format specification, the test vectors, and the client library that wallets and tooling would actually import. That is the artifact that matters for wider adoption, and it has no dependency on any specific lock script.
+The `ckb_lock_script` repository is now in a maintenance state. The active development focus shifts to two things:
+
+**`ckb-idl-client`** — the wire format specification, the test vectors, and the client library that wallets and tooling would actually import. That is the artifact that matters for wider adoption, and it has no dependency on any specific lock script.
+
+**`ckb-idl-derive`** — the type registry needs to be treated as a deliberate decision, not just whatever was convenient for the first two scripts. The current set (`u8`, `u32`, `u64`, `[u8; 33]`, `[u8; 64]`, `[u8; 65]`, `Vec<u8>`) covers secp256k1 and simple byte fields. What's missing: `[u8; 32]` for hash fields, `u128` for token amounts, and a plan for Molecule-encoded types. The right approach is to survey what real CKB scripts actually put in their witnesses before extending the registry — adding types that no script uses is noise.
 
 ---
 
